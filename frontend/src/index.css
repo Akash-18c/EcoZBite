@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+    font-family: 'Inter', ui-sans-serif, system-ui;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5;
+  }
+  
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-gray-900 font-semibold py-3 px-6 rounded-xl border-2 border-gray-200 hover:border-green-300 shadow-sm hover:shadow-md transition-all duration-300;
+  }
+  
+  .card {
+    @apply bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden backdrop-blur-sm;
+  }
+  
+  .card-hover {
+    @apply hover:shadow-2xl hover:-translate-y-1 transition-all duration-300;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-200 bg-white;
+  }
+  
+  .gradient-bg {
+    @apply bg-gradient-to-br from-green-50 via-white to-emerald-50;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent;
+  }
+  
+  /* Mobile responsive utilities */
+  .mobile-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .mobile-text {
+    @apply text-sm sm:text-base;
+  }
+  
+  .mobile-heading {
+    @apply text-2xl sm:text-3xl lg:text-4xl;
+  }
+  
+  .mobile-button {
+    @apply px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base;
+  }
+  
+  .mobile-card {
+    @apply p-4 sm:p-6 lg:p-8;
+  }
+  
+  .mobile-grid {
+    @apply grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
+  }
+}
+
+/* Mobile responsive breakpoints */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  h1 { font-size: 1.875rem; line-height: 2.25rem; }
+  h2 { font-size: 1.5rem; line-height: 2rem; }
+  h3 { font-size: 1.25rem; line-height: 1.75rem; }
+  
+  .btn-primary, .btn-secondary {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  h1 { font-size: 1.5rem; line-height: 2rem; }
+  h2 { font-size: 1.25rem; line-height: 1.75rem; }
+  
+  .btn-primary, .btn-secondary {
+    padding: 0.625rem 1rem;
+    font-size: 0.8125rem;
+  }
+}
